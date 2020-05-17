@@ -29,7 +29,7 @@ public class Example_3_Infinity_Loop_Render extends Canvas implements Runnable {
 	private final int SCALE = 3;
 	
 	public void initFrame() {
-		frame = new JFrame("Game Infinity Loop - Tick & Render");
+		frame = new JFrame("Game Infinity Loop - Render");
 		frame.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
@@ -45,13 +45,13 @@ public class Example_3_Infinity_Loop_Render extends Canvas implements Runnable {
 	private boolean isRunning = true;
 	
 	// Method start to call by Game object
-	public void start() {
+	public synchronized void start() {
 		// Thread(this) -> "this" to call for Method run()
 		thread = new Thread(this);
 		thread.start();
 	}
 	
-	public void stop() {
+	public synchronized void stop() {
 		// Interrupt Infinity Loop
 		isRunning = false;
 		try {
@@ -110,8 +110,8 @@ public class Example_3_Infinity_Loop_Render extends Canvas implements Runnable {
 	}
 	
 	// Main
-	public static void main(String[] args) {
-		Example_3_Infinity_Loop_Render game = new Example_3_Infinity_Loop_Render();
-		game.start();
-	}
+//	public static void main(String[] args) {
+//		Example_3_Infinity_Loop_Render game = new Example_3_Infinity_Loop_Render();
+//		game.start();
+//	}
 }
