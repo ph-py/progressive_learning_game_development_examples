@@ -46,7 +46,7 @@ public class Example_2_Game_Threads extends Canvas implements Runnable {
 	@Override
 	public void run() {
 		System.out.println("Thread Started");
-		
+		stop();
 	}
 	
 	// Method for Thread start on Main()
@@ -60,7 +60,7 @@ public class Example_2_Game_Threads extends Canvas implements Runnable {
 	public synchronized void stop() {
 		isRunning = false;
 		try {
-			System.out.println("Thread terminada");
+			System.out.println("Thread Stopped");
 			thread.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -68,9 +68,9 @@ public class Example_2_Game_Threads extends Canvas implements Runnable {
 	}
 	
 	// Main
-		public static void main(String[] args) {
-			Example_2_Game_Threads game = new Example_2_Game_Threads();
-			game.start();
-		}
-	
+//	public static void main(String[] args) {
+//		Example_2_Game_Threads game = new Example_2_Game_Threads();
+//		game.start();
+//	}
+//	
 }
