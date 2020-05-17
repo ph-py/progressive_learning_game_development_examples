@@ -23,14 +23,14 @@ public class Example_1_Game_Window extends Canvas {
 	
 	// Main
 	public static void main(String[] args) {
-		Example_1_Game_Window game = new Example_1_Game_Window();
+//		Example_1_Game_Window game = new Example_1_Game_Window();
 	}
 	
 	public void initFrame() {
 		// Create frame object for window
 		// Configure Window Dimensions
 		// Configure close option
-		frame = new JFrame("PH's game");
+		frame = new JFrame("Game Window");
 		frame.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
